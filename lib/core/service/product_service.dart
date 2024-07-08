@@ -20,9 +20,7 @@ Connectivity connectivity = Connectivity();
 ConnectivityResult? connectivityResult;
 
 class ProductServiceImp extends ProductService{
-late List<ConnectivityResult> result;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    
+late List<ConnectivityResult> result;    
 
 
   @override
@@ -38,7 +36,7 @@ late List<ConnectivityResult> result;
         productHive!.delete("products");
         productHive!.put("products", putInBox);
         print(productHive!.get("products"));
-        return ListOf(data: productModel);
+        return ListOf(data: productModel); 
       }
       else{
         return ErrorModel();

@@ -45,12 +45,8 @@ class _ProductPageState extends State<ProductPage> {
                     itemCount: state.productModels.data.length ,
                     itemBuilder: (context, index) {
                        if((index) == state.productModels.data.length ){
-                                    if(state.productModels.data.length==100  ){
+                                    if(connectivityResult == ConnectivityResult.none){
                                       return SizedBox();
-                                    }else if(connectivityResult == ConnectivityResult.none){
-                                      return SizedBox(height: 0,width: 0,);
-                                    }else{
-                                      return Container(height:80,child: Center(child: CircularProgressIndicator(),));
                                     }
                                   }else
                      { print(state.productModels.data[index].image);
